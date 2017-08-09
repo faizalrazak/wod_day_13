@@ -1,23 +1,20 @@
-function roundMarks(mark){
-  var result;
-  
-  for(var i=0; i<mark.length; i++){
-    document.write(mark[i]);
-    if(mark[i] <38){
-      result = mark[i];
-    }else{
-      var a = mark[i] +  1;
-      var b = mark[i] + 2;
-      
-      if( a % 5 == 0){
-        result = a;
-      }else if( b % 5 == 0){
-        result = b;
+function studentMark(markArrays){
+  var results = [];
+  for(var i=0; i<markArrays.length; i++){
+    var mark;
+    if(markArrays[i] < 38){
+      mark = markArrays[i];
+    }else{ 
+      if( markArrays[i] % 5 == 3){
+        mark = markArrays[i] + 2;
+      }else if( markArrays[i] % 5 == 4){
+        mark = markArrays[i] + 1;
       }else{
-        result = mark[i];
+        mark = markArrays[i];
       }
     }
-    document.write(" = "+result+"<br>");
-  } 
+    results.push(mark);
+  }
+ return results; 
 }
-roundMarks([37,58,41]);
+document.write(studentMark([33,58,69]));
