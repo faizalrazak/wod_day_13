@@ -1,4 +1,6 @@
 function marks(x){
+  
+  //Rename your x variable to be something meaningful.. eg: numArray
   var result;
   
   for(var i=0; i<x.length; i++){
